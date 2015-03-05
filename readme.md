@@ -1,0 +1,1 @@
+clone this into the home directory. Run 'bash link_configs.sh' to setup home configuration links
