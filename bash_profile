@@ -8,5 +8,10 @@ cd $1 && ls
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-# terminal prompt
-export PS1="\u:\W$ "
+# current git branch
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+# terminal prompt mod
+export PS1="\u:\W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
