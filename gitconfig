@@ -6,3 +6,5 @@
 [user]
 	name = Raymond Carino
 	email = sloooooowduck@gmail.com
+[core]
+	excludesfile = ~/.gitignore

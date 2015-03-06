@@ -19,3 +19,11 @@ export PS1="\u:\W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 # use emacs for programs that spawn an editor
 export VISUAL=emacs
 export EDITOR="$VISUAL"
+
+# ssh into work dev computer
+sshwk() {
+    ssh ubuntu@ray-dev
+}
+
+# register global gitignore file to git
+git config --global core.excludesfile '~/.gitignore'
