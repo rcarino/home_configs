@@ -15,3 +15,7 @@ parse_git_branch() {
 
 # terminal prompt mod
 export PS1="\u:\W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
+
+# use emacs for programs that spawn an editor
+export VISUAL=emacs
+export EDITOR="$VISUAL"
