@@ -1,6 +1,8 @@
 [alias]
 	co = checkout
 	st = status
+	# apply stash by alias name
+	sapply = "!f() { git stash apply stash^{/$*}; }; f"
 [push]
 	default = simple
 [user]
