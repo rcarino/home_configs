@@ -27,3 +27,7 @@ sshwk() {
 
 # register global gitignore file to git
 git config --global core.excludesfile '~/.gitignore'
+
+# add arcanist if it exists
+ARC_PATH="~/bin/arc/arcanist/bin"
+PATH=$PATH:$ARC_PATH
