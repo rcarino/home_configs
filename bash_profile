@@ -31,3 +31,8 @@ git config --global core.excludesfile '~/.gitignore'
 # add arcanist if it exists
 ARC_PATH="~/bin/arc/arcanist/bin"
 PATH=$PATH:$ARC_PATH
+
+# git autocomplete
+if [ -f ~/home_configs/git-completion.bash ]; then
+    source ~/home_configs/git-completion.bash
+fi
