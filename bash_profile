@@ -36,3 +36,11 @@ PATH=$PATH:$ARC_PATH
 if [ -f ~/home_configs/git-completion.bash ]; then
     source ~/home_configs/git-completion.bash
 fi
+
+# name tabs and windows
+function tabname {
+  printf "\e]1;$1\a"
+}
+function winname {
+  printf "\e]2;$1\a"
+}
