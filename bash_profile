@@ -22,7 +22,7 @@ export EDITOR="$VISUAL"
 
 # ssh into work dev computer
 sshwk() {
-    ssh ubuntu@ray-dev
+    ssh -t ubuntu@ray-dev 'cd Projects/mba-sdmain/src/web && exec bash -l'
 }
 
 # register global gitignore file to git
