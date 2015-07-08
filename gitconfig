@@ -1,7 +1,14 @@
 [alias]
 	co = checkout
+	st = status
+	# apply stash by alias name
+	sapply = "!f() { git stash apply stash^{/$*}; }; f"
+	amend = commit --amend
+	cp = cherry-pick
 [push]
 	default = simple
 [user]
 	name = Raymond Carino
 	email = sloooooowduck@gmail.com
+[core]
+	excludesfile = ~/.gitignore
