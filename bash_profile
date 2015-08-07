@@ -28,7 +28,7 @@ export EDITOR="$VISUAL"
 
 # ssh into work dev computer
 sshwk() {
-    ssh -t ubuntu@ray-dev 'cd Projects/mba-sdmain/src/web && exec bash -l'
+    ssh -t ubuntu@ray-dev 'cd Projects/mba-sdmain && exec bash -l'
 }
 
 # register global gitignore file to git
@@ -51,3 +51,5 @@ function winname {
   printf "\e]2;$1\a"
 }
 
+# allow ctrl + s
+stty -ixon

@@ -5,6 +5,7 @@
 	sapply = "!f() { git stash apply stash^{/$*}; }; f"
 	amend = commit --amend
 	cp = cherry-pick
+	br = branch
 [push]
 	default = simple
 [user]
