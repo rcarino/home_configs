@@ -9,7 +9,12 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
 # Use most up to date version of emacs
-alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
+MAC_EMACS="/Applications/Emacs.app/Contents/MacOS/Emacs"
+if [ -e $MAC_EMACS ]
+then
+    echo 'I ran'
+    alias emacs="$MAC_EMACS -nw"
+fi
 
 # Gain access to go
 PATH=$PATH:/usr/local/go/bin
