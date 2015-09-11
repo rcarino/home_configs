@@ -6,6 +6,8 @@
 	amend = commit --amend
 	cp = cherry-pick
 	br = branch
+	co = pull
+	ci = commit
 [push]
 	default = simple
 [user]
