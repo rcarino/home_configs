@@ -33,7 +33,7 @@ export EDITOR="$VISUAL"
 
 # ssh into work dev computer
 sshwk() {
-    ssh -t ubuntu@ray-dev 'cd Projects/mba-sdmain && exec bash -l'
+    ssh -t ubuntu@ray-dev 'cd Projects/sdmain && exec bash -l'
 }
 
 # register global gitignore file to git
@@ -58,3 +58,9 @@ function winname {
 
 # allow ctrl + s
 stty -ixon
+
+# work dirs
+alias wdevscripts='cd ~/Projects/local-sdmain/src/scripts/dev'
+alias wwebsrc='cd ~/Projects/local-sdmain/src/web'
+alias wdeployment='cd ~/Projects/local-sdmain/deployment'
+alias wjavasrc='cd ~/Projects/local-sdmain/src/java/sd'
