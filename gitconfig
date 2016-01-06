@@ -7,7 +7,7 @@
 	cp = cherry-pick
 	br = branch
 	ci = commit
-	nuke = clean -fd; checkout .
+	nuke = !git clean -fd && git checkout .
 [push]
 	default = simple
 [user]
