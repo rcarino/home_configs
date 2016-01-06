@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # ls and cd in one command
 cl()
 {
@@ -56,7 +58,7 @@ function winname {
   printf "\e]2;$1\a"
 }
 
-# allow ctrl + s
+# allow ctrl + s in mac
 stty -ixon
 
 # work dirs
