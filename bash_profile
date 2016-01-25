@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # ls and cd in one command
 cl()
 {
@@ -9,7 +11,12 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
 # Use most up to date version of emacs
-alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
+MAC_EMACS="/Applications/Emacs.app/Contents/MacOS/Emacs"
+if [ -e $MAC_EMACS ]
+then
+    echo 'I ran'
+    alias emacs="$MAC_EMACS -nw"
+fi
 
 # Gain access to go
 PATH=$PATH:/usr/local/go/bin
@@ -32,7 +39,7 @@ export EDITOR="$VISUAL"
 
 # ssh into work dev computer
 sshwk() {
-    ssh -t ubuntu@ray-dev 'cd Projects/mba-sdmain/src/web && exec bash -l'
+    ssh -t ubuntu@ray-dev 'cd Projects/sdmain && exec bash -l'
 }
 
 # register global gitignore file to git
@@ -54,3 +61,12 @@ function tabname {
 function winname {
   printf "\e]2;$1\a"
 }
+
+# allow ctrl + s in mac
+stty -ixon
+
+# work dirs
+alias wdevscripts='cd ~/Projects/local-sdmain/src/scripts/dev'
+alias wwebsrc='cd ~/Projects/local-sdmain/src/web'
+alias wdeployment='cd ~/Projects/local-sdmain/deployment'
+alias wjavasrc='cd ~/Projects/local-sdmain/src/java/sd'

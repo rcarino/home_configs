@@ -5,10 +5,13 @@
 	sapply = "!f() { git stash apply stash^{/$*}; }; f"
 	amend = commit --amend
 	cp = cherry-pick
+	br = branch
+	ci = commit
+	nuke = !git clean -fd && git checkout .
 [push]
 	default = simple
 [user]
 	name = Raymond Carino
-	email = sloooooowduck@gmail.com
+	email = ray.carino@rubrik.com
 [core]
 	excludesfile = ~/.gitignore
