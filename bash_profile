@@ -13,6 +13,10 @@ alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 
 # Gain access to go
 PATH=$PATH:/usr/local/go/bin
+# Go env vars
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$PATH
 
 # current git branch
 parse_git_branch() {
@@ -50,4 +54,3 @@ function tabname {
 function winname {
   printf "\e]2;$1\a"
 }
-
