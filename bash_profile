@@ -14,7 +14,6 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 MAC_EMACS="/Applications/Emacs.app/Contents/MacOS/Emacs"
 if [ -e $MAC_EMACS ]
 then
-    echo 'I ran'
     alias emacs="$MAC_EMACS -nw"
 fi
 
