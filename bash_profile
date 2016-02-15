@@ -24,6 +24,10 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
 
+# Gain access to scala
+export SCALA_HOME=/usr/local/share/scala
+PATH=$PATH:$SCALA_HOME/bin
+
 # current git branch
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
