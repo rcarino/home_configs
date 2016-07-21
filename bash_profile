@@ -24,10 +24,6 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
 
-# Gain access to scala
-export SCALA_HOME=/usr/local/share/scala
-PATH=$PATH:$SCALA_HOME/bin
-
 # current git branch
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -40,17 +36,8 @@ export PS1="\u:\w\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 export VISUAL=emacs
 export EDITOR="$VISUAL"
 
-# ssh into work dev computer
-sshwk() {
-    ssh -t ubuntu@ray-dev 'cd Projects/sdmain && exec bash -l'
-}
-
 # register global gitignore file to git
 git config --global core.excludesfile '~/.gitignore'
-
-# add arcanist if it exists
-ARC_PATH="~/bin/arc/arcanist/bin"
-PATH=$PATH:$ARC_PATH
 
 # git autocomplete
 if [ -f ~/home_configs/git-completion.bash ]; then
@@ -68,8 +55,17 @@ function winname {
 # allow ctrl + s in mac
 stty -ixon
 
-# work dirs
-alias wdevscripts='cd ~/Projects/local-sdmain/src/scripts/dev'
-alias wwebsrc='cd ~/Projects/local-sdmain/src/web'
-alias wdeployment='cd ~/Projects/local-sdmain/deployment'
-alias wjavasrc='cd ~/Projects/local-sdmain/src/java/sd'
+
+#eval "$(docker-machine env default)" # make docker commands work via magic?
+
+eval "$(nodenv init -)"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# Allows projects to source the .env file
+source /usr/local/opt/autoenv/activate.sh
+
+function init-docker {
+    source '/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh'
+}
+
+export PATH=~/bin:$PATH

@@ -12,6 +12,6 @@
 	default = simple
 [user]
 	name = Raymond Carino
-	email = ray.carino@rubrik.com
+	email = rcarino@classpass.com
 [core]
 	excludesfile = ~/.gitignore
